@@ -693,4 +693,9 @@
     <item msgid="1595097872875714252">"Только в режиме без звука"</item>
     <item msgid="1458182414036878616">"Никогда"</item>
   </string-array>
+
+    <!-- Voice quality filter -->
+    <string name="voice_quality_preferences_title">Настройка CrystalTalk</string>
+    <string name="voice_quality_summary">Аудио-профили входящего вызова</string>
+
 </resources>
