@@ -215,6 +215,15 @@
     <string name="international_disable" msgid="2850648591041088931">"Buitenlands nieuws uitgeschakeld"</string>
     <string name="list_language_title" msgid="2841683501919760043">"Taal"</string>
     <string name="list_language_summary" msgid="8109546531071241601">"De taal voor het nieuws selecteren"</string>
+  <string-array name="list_language_entries">
+    <item msgid="6137851079727305485">"Engels"</item>
+    <item msgid="1151988412809572526">"Frans"</item>
+    <item msgid="577840534704312665">"Spaans"</item>
+    <item msgid="8385712091143148180">"Japans"</item>
+    <item msgid="1858401628368130638">"Koreaans"</item>
+    <item msgid="1933212028684529632">"Chinees"</item>
+    <item msgid="1908428006803639064">"Hebreeuws"</item>
+  </string-array>
     <string name="list_language_dtitle" msgid="5442908726538951934">"Talen"</string>
     <string name="enable_disable_local_weather" msgid="986967454867219114">"Lokaal weerbericht"</string>
     <string name="local_weather_enable" msgid="6199315114382448922">"Lokaal weerbericht ingeschakeld"</string>
@@ -252,14 +261,47 @@
     <string name="enable_disable_multi_category" msgid="626771003122899280">"Meerdere categorieën"</string>
     <string name="multi_category_enable" msgid="1179299804641721768">"Meerdere categorieën ingeschakeld"</string>
     <string name="multi_category_disable" msgid="880104702904139505">"Meerdere categorieën uitgeschakeld"</string>
+    <string name="gsm_umts_network_preferences_title" msgid="4834419333547382436">"GSM-/UMTS-netwerkvoorkeuren"</string>
+    <string name="gsm_umts_network_preferneces_summary" msgid="1905018644156819521">"Nog niet geïmplementeerd."</string>
+    <string name="gsm_umts_network_preferences_dialogtitle" msgid="6356332580813229898">"GSM-/UMTS-netwerkvoorkeuren"</string>
+  <string-array name="gsm_umts_network_preferences_choices">
+    <item msgid="935612021902787683">"GSM/WCDMA (automatische modus)"</item>
+    <item msgid="8912042051809329533">"Alleen WCDMA"</item>
+    <item msgid="8776934131146642662">"Alleen GSM"</item>
+    <item msgid="4684679567848300935">"GSM/WCDA (voorkeur voor WCDMA)"</item>
+  </string-array>
     <string name="prefer_2g" msgid="8442550937280449639">"Alleen 2G-netwerken"</string>
     <string name="prefer_2g_summary" msgid="1976491403210690759">"Energiespaarstand"</string>
     <string name="cdma_system_select_title" msgid="5757657769327732833">"Systeem selecteren"</string>
     <string name="cdma_system_select_summary" msgid="60460043745797517">"De CDMA-roamingmodus wijzigen"</string>
     <string name="cdma_system_select_dialogtitle" msgid="6083355415165359075">"Systeem selecteren"</string>
-    <string name="cdma_subscription_title" msgid="1162564010076763284">"CDMA-abonnement"</string>
+  <string-array name="cdma_system_select_choices">
+    <item msgid="176474317493999285">"Alleen thuis"</item>
+    <item msgid="1205664026446156265">"Automatisch"</item>
+  </string-array>
+    <string name="cdma_roaming_mode_title" msgid="6366737033053855198">"CDMA-roamingmodus"</string>
+    <string name="cdma_roaming_mode_summary" msgid="8604713111805562261">"De CDMA-roamingmodus wijzigen"</string>
+    <string name="cdma_roaming_mode_dialogtitle" msgid="1802896889172094947">"CDMA-roamingmodus"</string>
+  <string-array name="cdma_roaming_mode_choices">
+    <item msgid="6024072766548865002">"Alleen thuisnetwerken"</item>
+    <item msgid="8174642753290624634">"Partnernetwerken"</item>
+    <item msgid="2241951431403168661">"Elk netwerk"</item>
+  </string-array>
+    <string name="cdma_network_preferences_title" msgid="41193174429510391">"CDMA-netwerkvoorkeuren"</string>
+    <string name="cdma_network_preferneces_summary" msgid="3524451924935793338">"Nog niet geïmplementeerd."</string>
+    <string name="cdma_network_preferences_dialogtitle" msgid="4548860809290455653">"CDMA-netwerkvoorkeuren"</string>
+  <string-array name="cdma_network_preferences_choices">
+    <item msgid="3711054371631487248">"CDMA/EvDo"</item>
+    <item msgid="6143696847467859795">"Alleen CDMA"</item>
+    <item msgid="2683555124647197574">"Alleen EvDo"</item>
+  </string-array>
+    <string name="cdma_subscription_title" msgid="445607520753045412">"CDMA-abonnement"</string>
     <string name="cdma_subscription_summary" msgid="2530890766115781140">"Schakelen tussen RUIM/SIM en NV"</string>
     <string name="cdma_subscription_dialogtitle" msgid="2699527950523333110">"abonnement"</string>
+  <string-array name="cdma_subscription_choices">
+    <item msgid="2258014151300708431">"RUIM/SIM"</item>
+    <item msgid="5127722015571873880">"NV"</item>
+  </string-array>
     <string name="cdma_activate_device" msgid="3793805892364814518">"Apparaat activeren"</string>
     <string name="cdma_lte_data_service" msgid="4255018217292548962">"Gegevensservice instellen"</string>
     <string name="fdn" msgid="7878832555095183202">"Vaste nummers"</string>
