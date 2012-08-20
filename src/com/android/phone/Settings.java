@@ -229,7 +229,6 @@ public class Settings extends PreferenceActivity implements DialogInterface.OnCl
 
         mButtonDataEnabled = (CheckBoxPreference) prefSet.findPreference(BUTTON_DATA_ENABLED_KEY);
         mButtonDataRoam = (CheckBoxPreference) prefSet.findPreference(BUTTON_ROAMING_KEY);
-        mButtonNationalDataRoam = (CheckBoxPreference) prefSet.findPreference(BUTTON_NATIONAL_ROAMING_KEY);
         mButtonPreferredCdmaNetworkMode = (ListPreference) prefSet.findPreference(
                 BUTTON_PREFERED_CDMA_NETWORK_MODE);
         mButtonPreferredUmtsNetworkMode = (ListPreference) prefSet.findPreference(
