@@ -66,7 +66,7 @@ public class CallerInfoCache {
         Phone.NORMALIZED_NUMBER,     // 1
         Data.CUSTOM_RINGTONE,        // 2
         Data.SEND_TO_VOICEMAIL,      // 3
-        // Data.CUSTOM_VIBRATION        // 4
+        Data.CUSTOM_VIBRATION        // 4
     };
 
     private static final int INDEX_NUMBER            = 0;
@@ -77,10 +77,10 @@ public class CallerInfoCache {
 
     private static final String SELECTION = "("
             + "(" + Data.CUSTOM_RINGTONE + " IS NOT NULL OR "
+            + Data.CUSTOM_VIBRATION + " IS NOT NULL OR "
             + Data.SEND_TO_VOICEMAIL + "=1)"
             + " AND " + Data.DATA1 + " IS NOT NULL)";
 
-    //   OR " + Data.CUSTOM_VIBRATION + " IS NOT NULL
     public static class CacheEntry {
         public final String customRingtone;
         public final String customVibration;
