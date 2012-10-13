@@ -177,6 +177,9 @@ public class CallFeaturesSetting extends PreferenceActivity
     private static final String BUTTON_GSM_UMTS_OPTIONS = "button_gsm_more_expand_key";
     private static final String BUTTON_CDMA_OPTIONS = "button_cdma_more_expand_key";
 
+    private static final String BUTTON_VOICE_QUALITY_KEY = "button_voice_quality_key";
+    private static String mVoiceQuality;
+
     private static final String VM_NUMBERS_SHARED_PREFERENCES_NAME = "vm_numbers";
 
     private static final String BUTTON_SIP_CALL_OPTIONS =
@@ -264,6 +267,7 @@ public class CallFeaturesSetting extends PreferenceActivity
     private ListPreference mButtonSipCallOptions;
     private CheckBoxPreference mMwiNotification;
     private ListPreference mVoicemailProviders;
+    private ListPreference mButtonVoiceQuality;
     private PreferenceScreen mVoicemailSettings;
     private ListPreference mVoicemailNotificationVibrateWhen;
     private SipSharedPreferences mSipSharedPreferences;
@@ -488,6 +492,7 @@ public class CallFeaturesSetting extends PreferenceActivity
             // Update Noise suppression value in Settings database
             Settings.System.putInt(mPhone.getContext().getContentResolver(),
                     Settings.System.NOISE_SUPPRESSION, nsp);
+        } else if (preference == mButtonVoiceQuality) {
             return true;
         } else if (preference == mButtonAutoRetry) {
             android.provider.Settings.System.putInt(mPhone.getContext().getContentResolver(),
@@ -556,10 +561,15 @@ public class CallFeaturesSetting extends PreferenceActivity
                     Settings.System.DTMF_TONE_TYPE_WHEN_DIALING, index);
         } else if (preference == mButtonTTY) {
             handleTTYChange(preference, objValue);
+
         } else if (preference == mMwiNotification) {
             int mwi_notification = mMwiNotification.isChecked() ? 1 : 0;
             Settings.System.putInt(mPhone.getContext().getContentResolver(),
                     Settings.System.ENABLE_MWI_NOTIFICATION, mwi_notification);
+
+        } else if (preference == mButtonVoiceQuality) {
+            mVoiceQuality = (String) objValue;
+
         } else if (preference == mVoicemailProviders) {
             final String newProviderKey = (String) objValue;
             if (DBG) {
@@ -604,7 +614,11 @@ public class CallFeaturesSetting extends PreferenceActivity
         return true;
     }
 
-    @Override
+    public static String getVoiceQuality() {
+        return mVoiceQuality;
+    }
+
+    // Preference click listener invoked on OnDialogClosed for EditPhoneNumberPreference.
     public void onDialogClosed(EditPhoneNumberPreference preference, int buttonClicked) {
         if (DBG) log("onPreferenceClick: request preference click on dialog close: " +
                 buttonClicked);
@@ -1537,6 +1551,17 @@ public class CallFeaturesSetting extends PreferenceActivity
         mButtonTTY = (ListPreference) findPreference(BUTTON_TTY_KEY);
         mButtonNoiseSuppression = (CheckBoxPreference) findPreference(BUTTON_NOISE_SUPPRESSION_KEY);
         mVoicemailProviders = (ListPreference) findPreference(BUTTON_VOICEMAIL_PROVIDER_KEY);
+        mButtonVoiceQuality = (ListPreference) findPreference(BUTTON_VOICE_QUALITY_KEY);
+
+        if (mButtonVoiceQuality != null) {
+            if (TextUtils.isEmpty(getResources().getString(R.string.voice_quality_param))) {
+                prefSet.removePreference(mButtonVoiceQuality);
+                mButtonVoiceQuality = null;
+            } else {
+                mButtonVoiceQuality.setOnPreferenceChangeListener(this);
+            }
+        }
+
         if (mVoicemailProviders != null) {
             mVoicemailProviders.setOnPreferenceChangeListener(this);
             mVoicemailSettings = (PreferenceScreen)findPreference(BUTTON_VOICEMAIL_SETTING_KEY);
@@ -1634,6 +1659,10 @@ public class CallFeaturesSetting extends PreferenceActivity
         // create intent to bring up contact list
         mContactListIntent = new Intent(Intent.ACTION_GET_CONTENT);
         mContactListIntent.setType(android.provider.Contacts.Phones.CONTENT_ITEM_TYPE);
+
+        if (mButtonVoiceQuality != null) {
+            mButtonVoiceQuality.setValue(mVoiceQuality);
+        }
 
         // check the intent that started this activity and pop up the voicemail
         // dialog if we've been asked to.

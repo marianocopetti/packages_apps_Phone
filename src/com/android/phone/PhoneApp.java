@@ -34,6 +34,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.media.AudioManager;
+import android.media.AudioSystem;
 import android.net.Uri;
 import android.os.AsyncResult;
 import android.os.Binder;
@@ -117,6 +118,8 @@ public class PhoneApp extends Application implements AccelerometerListener.Orien
     public static final int MMI_CANCEL = 53;
     // Don't use message codes larger than 99 here; those are reserved for
     // the individual Activities of the Phone UI.
+
+    private String mVoiceQualityParam;
 
     /**
      * Allowable values for the poke lock code (timeout between a user activity and the
@@ -587,6 +590,8 @@ public class PhoneApp extends Application implements AccelerometerListener.Orien
 
             // Read platform settings for TTY feature
             mTtyEnabled = getResources().getBoolean(R.bool.tty_enabled);
+
+            mVoiceQualityParam = getResources().getString(R.string.voice_quality_param);
 
             // Register for misc other intent broadcasts.
             IntentFilter intentFilter =
@@ -1391,6 +1396,10 @@ public class PhoneApp extends Application implements AccelerometerListener.Orien
      */
     /* package */ void updatePhoneState(Phone.State state) {
         if (state != mLastPhoneState) {
+            String voiceQualSetting = CallFeaturesSetting.getVoiceQuality();
+            if (mVoiceQualityParam != null && voiceQualSetting != null) {
+                AudioSystem.setParameters(mVoiceQualityParam + "=" + voiceQualSetting);
+            }
             mLastPhoneState = state;
             updateProximitySensorMode(state);
 
