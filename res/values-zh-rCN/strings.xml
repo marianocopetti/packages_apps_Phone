@@ -307,8 +307,6 @@
     <string name="enable_disable_multi_category" msgid="626771003122899280">"多类别"</string>
     <string name="multi_category_enable" msgid="1179299804641721768">"已启用多类别"</string>
     <string name="multi_category_disable" msgid="880104702904139505">"已停用多类别"</string>
-<<<<<<< HEAD
-=======
     <string name="gsm_umts_network_preferences_title" msgid="4834419333547382436">"GSM/UMTS 网络偏好设置"</string>
     <string name="gsm_umts_network_preferneces_summary" msgid="1905018644156819521">"尚未实现！"</string>
     <string name="gsm_umts_network_preferences_dialogtitle" msgid="6356332580813229898">"GSM/UMTS 网络偏好设置"</string>
@@ -318,7 +316,6 @@
     <item msgid="8776934131146642662">"仅 GSM"</item>
     <item msgid="4684679567848300935">"GSM/WCDA（首选 WCDMA）"</item>
   </string-array>
->>>>>>> 1ba2610... Preferred Network (umts/cdma) selection + cleanup
     <string name="prefer_2g" msgid="8442550937280449639">"仅使用 2G 网络"</string>
     <string name="prefer_2g_summary" msgid="1976491403210690759">"省电"</string>
     <string name="cdma_system_select_title" msgid="5757657769327732833">"系统选择"</string>
