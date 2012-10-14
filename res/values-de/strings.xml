@@ -661,13 +661,11 @@
     <string name="noise_suppression_title">Nebengeräusch-Unterdrückung</string>
     <string name="noise_suppression_summary">Nebengeräusch-Unterdrückung aktivieren</string>
 
+    <!-- End Noise suppression -->
+
     <!-- Set Phone Number Settings -->
     <string name="phone_number_label">Meine Nummer</string>
     <string name="phone_number_summary">Die Telefonnummer für dieses Gerät einstellen</string>
-
-    <string name="noise_suppression_title">Lärmunterdrückung</string>
-    <string name="noise_suppression_summary">Aktiviere Lärmunterdrückung für Anrufe</string>
-    <!-- End Noise suppression -->
 
     <!-- Voice quality filter -->
     <string name="voice_quality_preferences_title">Sprachqualität</string>

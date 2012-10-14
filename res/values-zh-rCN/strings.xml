@@ -328,9 +328,6 @@
     <item msgid="176474317493999285">"仅本地系统"</item>
     <item msgid="1205664026446156265">"自动"</item>
   </string-array>
-<<<<<<< HEAD
-    <string name="cdma_subscription_title" msgid="1162564010076763284">"CDMA 订阅"</string>
-=======
     <string name="cdma_roaming_mode_title" msgid="6366737033053855198">"CDMA 漫游模式"</string>
     <string name="cdma_roaming_mode_summary" msgid="8604713111805562261">"更改 CDMA 漫游模式"</string>
     <string name="cdma_roaming_mode_dialogtitle" msgid="1802896889172094947">"CDMA 漫游模式"</string>
@@ -348,7 +345,6 @@
     <item msgid="2683555124647197574">"仅 EvDo"</item>
   </string-array>
     <string name="cdma_subscription_title" msgid="445607520753045412">"CDMA 订阅"</string>
->>>>>>> 1ba2610... Preferred Network (umts/cdma) selection + cleanup
     <string name="cdma_subscription_summary" msgid="2530890766115781140">"在 RUIM/SIM 和 NV 之间进行切换"</string>
     <string name="cdma_subscription_dialogtitle" msgid="2699527950523333110">"订阅"</string>
   <string-array name="cdma_subscription_choices">
